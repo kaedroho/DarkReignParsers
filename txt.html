@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title>TXT parser</title>
+ </head>
+ <body>
+  <script type="text/javascript" src="txt.js"></script>
+  <script type="text/javascript">
+   var reader = new FileReader();
+   var txt = null;
+   reader.onload = function(event) {
+      txt = new TXT(reader.result);
+   }
+
+   function readFile(file) {
+      reader.readAsText(file);
+   }
+  </script>
+  <input type="file" onchange="readFile(this.files[0]);"/>
+ </body>
+</html>

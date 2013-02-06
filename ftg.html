@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title>FTG parser</title>
+ </head>
+ <body>
+  <script type="text/javascript" src="ftg.js"></script>
+  <script type="text/javascript">
+   var reader = new FileReader();
+   var ftg = null;
+   reader.onload = function(event) {
+      ftg = new FTG(reader.result);
+   }
+
+   function readFile(file) {
+      reader.readAsArrayBuffer(file);
+   }
+  </script>
+  <input type="file" onchange="readFile(this.files[0]);"/>
+ </body>
+</html>

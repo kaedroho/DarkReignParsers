@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title>Build TXT parser</title>
+ </head>
+ <body>
+  <script type="text/javascript" src="txt.js"></script>
+  <script type="text/javascript" src="build_txt.js"></script>
+  <script type="text/javascript">
+   var reader = new FileReader();
+   var buildTxt = null;
+   reader.onload = function(event) {
+      buildTxt = new BuildTXT(new TXT(reader.result));
+   }
+
+   function readFile(file) {
+      reader.readAsText(file);
+   }
+  </script>
+  <input type="file" onchange="readFile(this.files[0]);"/>
+ </body>
+</html>
